@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\SiteInfoController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 // Route::get('/user', function (Request $request) {
@@ -20,3 +21,6 @@ Route::post('/postcontact',[ContactController::class,'PostContactDetails']);
 
 //Site info route
 Route::get('/allsiteinfo',[SiteInfoController::class,'AllSiteinfo']);
+
+//All category route
+Route::get('/allcategory',[CategoryController::class,'AllCategory']);
