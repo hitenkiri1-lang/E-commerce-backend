@@ -3,9 +3,13 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
+    protected $polices =[
+        'App\Models\Model' => 'App\Polices\ModelPolicy',
+    ];
     /**
      * Register any application services.
      */
@@ -19,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolices();
+        if(! $this->app->routeAreCached())
+        {
+            Passport::routes();
+        } 
     }
 }
