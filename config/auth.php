@@ -38,17 +38,15 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-    ],
-    'api
-' => [
-        'driver' => 'token',
+    'web' => [
+        'driver' => 'session',
         'provider' => 'users',
-        'hash' => false,
     ],
+    'api' => [
+        'driver' => 'passport',
+        'provider' => 'users',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

@@ -11,10 +11,30 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductDetailsController;
 use App\Http\Controllers\Admin\NotificationController;
 
+// User login controllers
+use App\Http\Controllers\User\AuthController;
+
+
+
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
+////////////////// User Login Api start ////////////////////
+
+// Login Routes 
+Route::post('/login',[AuthController::class, 'Login']);
+
+ // Register Routes 
+Route::post('/register',[AuthController::class, 'Register']);
+
+
+
+
+
+
+
+////////////////// End User Login Api start ////////////////////
 
 //get visitor route
 Route::get('/getvisitor',[VisitorController::class,'GetVisitorDetails']);
