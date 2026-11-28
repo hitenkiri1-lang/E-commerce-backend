@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductDetailsController;
 use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\ReviewController;
 
 // User login controllers
 use App\Http\Controllers\User\AuthController;
@@ -76,3 +77,6 @@ Route::get('/search/{key}',[ProductListController::class,'ProductBySearch']);
 
 //similar product route
 Route::get('/similar/{subcategory}',[ProductListController::class,'SimilarProduct']);
+
+//review product route
+Route::get('/reviewlist/{id}',[ReviewController::class,'ReviewList']);
